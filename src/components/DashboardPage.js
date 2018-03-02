@@ -1,8 +1,9 @@
 import React from 'react';
+import ForumIndex from './ForumIndex';
 
 const DashboardPage = () => (
-  <div>
-    Dashboard page content
+  <div className="content-container">
+    <ForumIndex />
   </div>
 );
 
