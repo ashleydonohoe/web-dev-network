@@ -1,23 +1,41 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import ForumListItem from './ForumListItem';
+import filterForums from '../selectors/filterForums';
+import getForumThreads from '../selectors/getForumThreads';
 
-const ForumPostList = ({posts}) => (
-    <div className="content-container">
-        <h1>Forums</h1>
-        {/* Create row for each forum category created */}
-        <div className="list-header">Categories</div>
+export class ForumPostList extends React.Component {
+    render() {
+        const filteredForum = filterForums(this.props.posts, this.props.match.params.id)[0]
+        const forumName = filteredForum.name;
+        const posts = getForumThreads(filteredForum.posts);
+        console.log(posts);
 
-        <div className="list-body">
-            { forums.length === 0 ? (
-                <div>No Forums Found!</div>
-            ) : (
-                forums.map((forum) => {
-                    return <ForumListItem key={forum.id} {...forum} />
+        return (
+        <div className="content-container">
+            <h1>Posts for {forumName}</h1>
+            {/* Create row for each forum category created */}
+            <div className="list-header">Posts</div>
+
+            <div className="list-body">
+                { posts.length === 0 ? (
+                    <div>No Posts Found!</div>
+                ) : (
+                posts.map((post) => {
+                return <ForumListItem key={post.id} {...post} />
                 })
             )}
+            </div>
         </div>
+        )
+    }
+}
 
-    </div>
-);
 
-export default ForumPostList;
+const mapStateToProps = (state) => {
+    return {
+        posts: state.forums
+    }
+};
+
+export default connect(mapStateToProps)(ForumPostList);
