@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ForumListItem from './ForumListItem';
+import ForumPostItem from './ForumPostItem';
 import filterForums from '../selectors/filterForums';
 import getForumThreads from '../selectors/getForumThreads';
 
@@ -21,7 +21,7 @@ export class ForumPostList extends React.Component {
                     <div>No Posts Found!</div>
                 ) : (
                 posts.map((post) => {
-                return <ForumListItem key={post.id} {...post} />
+                return <ForumPostItem key={post.id} {...post} />
                 })
             )}
             </div>
@@ -29,7 +29,6 @@ export class ForumPostList extends React.Component {
         )
     }
 }
-
 
 const mapStateToProps = (state) => {
     return {
