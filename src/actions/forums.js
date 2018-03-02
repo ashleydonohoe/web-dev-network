@@ -14,6 +14,10 @@ export const startGetForums = () => {
            console.log("Trying to get forum list");
            snapshot.forEach((childSnapshot) => {
               console.log(childSnapshot.val());
+              forumList.push({
+                  id: childSnapshot.key,
+                  ...childSnapshot.val()
+              });
            });
 
             dispatch(getForums(forumList));
