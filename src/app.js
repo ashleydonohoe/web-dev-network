@@ -33,7 +33,7 @@ firebase.auth().onAuthStateChanged((user) => {
     store.dispatch(startGetForums()).then(() => {
         renderApp();
         if (history.location.pathname === '/') {
-            history.push('/dashboard');
+            history.push('/forums');
         }
     });
   } else {

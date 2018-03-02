@@ -7,7 +7,7 @@ export const Header = ({ startLogout }) => (
   <header className="header">
     <div className="content-container">
       <div className="header__content">
-          <Link className="header__title" to="/dashboard">
+          <Link className="header__title" to="/forums">
               <h1>Web Dev Network</h1>
           </Link>
           <Link className="button button--link" to="/chat">Chat Room</Link>
