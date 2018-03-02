@@ -14,7 +14,6 @@ export class ForumPostList extends React.Component {
         return (
         <div className="content-container">
             <h1>Posts for {forumName}</h1>
-            {/* Create row for each forum category created */}
             <div className="list-header">Posts</div>
 
             <div className="list-body">

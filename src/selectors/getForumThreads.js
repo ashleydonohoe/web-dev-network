@@ -1,6 +1,5 @@
+import _ from 'lodash';
+
 export default (posts) => {
-    return posts === undefined ? [] :
-     Object.keys(posts).map(key => {
-        return posts[key];
-    });
+    return posts === undefined ? [] : _.values(posts);
 };
