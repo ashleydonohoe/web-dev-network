@@ -23,3 +23,9 @@ export const startGetForums = () => {
         });
     };
 };
+
+export const startAddPost = (postData = {}) => {
+    return (dispatch, getState) => {
+
+    }
+};

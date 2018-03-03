@@ -7,3 +7,58 @@
 // TODO: Find a way to create user accounts with settings, like screenname, profile image, and bio to add to the site's social media feature
 
 // TODO: Add ability to like individual posts and show like count
+
+import React from 'react';
+import moment from 'moment';
+
+export default class AddPostForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            content: '',
+            title: '',
+            date: moment(),
+            error: ''
+        };
+    }
+
+    ontitleChange = (e) => {
+        const title = e.target.value;
+        this.setState(() => ({title}));
+    };
+
+    onContentChange = (e) => {
+        const content = e.target.value;
+        this.setState(() => ({content}));
+    };
+
+    onSubmit = (e) => {
+        e.preventDefault();
+
+        if(!this.state.title || !this.state.content) {
+            this.setState(() => ({ error: 'Please provide title and content.'}))
+
+        } else {
+            this.setState(() => ({error: ''}));
+            console.log('submit');
+            this.props.onSubmit({
+                title: this.state.title,
+                date: this.state.date,
+                content: this.state.content
+            });
+        }
+    };
+
+    render() {
+        return (
+            <form className="form" onSubmit={this.onSubmit}>
+                { this.state.error && <p className="form__error">{this.state.error}</p>}
+                <input className="text-input" type="text" placeholder="Title" autoFocus value={this.state.title} onChange={this.ontitleChange} />
+                <textarea className="textarea" placeholder="Add post content here" onChange={this.onContentChange()} value={this.state.content}></textarea>
+                <div>
+                    <button className="button">Add Post</button>
+                </div>
+            </form>
+        );
+    }
+}

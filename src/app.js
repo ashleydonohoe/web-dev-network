@@ -29,13 +29,15 @@ ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    store.dispatch(login(user.uid));
-    store.dispatch(startGetForums()).then(() => {
-        renderApp();
-        if (history.location.pathname === '/') {
-            history.push('/forums');
-        }
-    });
+      const uid = user.uid;
+      const name = user.displayName;
+      store.dispatch(login(uid, name));
+        store.dispatch(startGetForums()).then(() => {
+            renderApp();
+            if (history.location.pathname === '/') {
+                history.push('/forums');
+            }
+        });
   } else {
     store.dispatch(logout());
     renderApp();
