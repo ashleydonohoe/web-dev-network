@@ -7,12 +7,12 @@ import getThreadPosts from '../selectors/getThreadPosts';
 
 export class ForumThreadList extends React.Component {
     render() {
+        // TODO: Write some kind of function that does a lot of this data conversion with fewer method calls
         const filteredForum = filterForums(this.props.posts, this.props.match.params.forumId)[0];
         const posts = getForumThreads(filteredForum.posts);
         // Take forum name and thread id to get the posts for thread
         const post  = getThreadPosts(posts, this.props.match.params.postId)[0];
         const replies = getForumThreads(post.replies);
-        console.log(replies);
 
         return (
             <div className="content-container">
@@ -21,6 +21,7 @@ export class ForumThreadList extends React.Component {
                 </div>
 
                 <div className="list-body">
+                    <ForumPostItem key={post.id} {...post}/>
                     { replies.length === 0 ? (
                         <div>No replies yet!</div>
                     ) : (
