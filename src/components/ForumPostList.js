@@ -7,7 +7,7 @@ import getForumThreads from '../selectors/getForumThreads';
 export class ForumPostList extends React.Component {
     render() {
         const forumURL = this.props.location.pathname;
-        const filteredForum = filterForums(this.props.posts, this.props.match.params.id)[0]
+        const filteredForum = filterForums(this.props.posts, this.props.match.params.id)[0];
         const forumName = filteredForum.name;
         console.log(forumName);
         const posts = getForumThreads(filteredForum.posts);
