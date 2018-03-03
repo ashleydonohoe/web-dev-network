@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="307c731d-d633-4da8-8c3d-413f5fcea647" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/selectors/getThreadPosts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/forums.js" afterPath="$PROJECT_DIR$/src/actions/forums.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ForumPostList.js" afterPath="$PROJECT_DIR$/src/components/ForumPostList.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ForumThreadList.js" afterPath="$PROJECT_DIR$/src/components/ForumThreadList.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -75,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ForumThreadList.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ForumThreadList.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/ForumThreadList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="11" column="59" lean-forward="false" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
+            <state relative-caret-position="269">
+              <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -97,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="getThreadPosts.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="getThreadPosts.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/selectors/getThreadPosts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
+            <state relative-caret-position="60">
+              <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -153,8 +150,8 @@
         <option value="$PROJECT_DIR$/src/actions/forums.js" />
         <option value="$PROJECT_DIR$/src/components/ForumPostList.js" />
         <option value="$PROJECT_DIR$/src/selectors/filterForums.js" />
-        <option value="$PROJECT_DIR$/src/components/ForumThreadList.js" />
         <option value="$PROJECT_DIR$/src/selectors/getThreadPosts.js" />
+        <option value="$PROJECT_DIR$/src/components/ForumThreadList.js" />
       </list>
     </option>
   </component>
@@ -170,8 +167,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="947" />
-    <option name="y" value="116" />
+    <option name="x" value="845" />
+    <option name="y" value="119" />
     <option name="width" value="1152" />
     <option name="height" value="1051" />
   </component>
@@ -398,15 +395,15 @@
       <option name="presentableId" value="Default" />
       <updated>1519933905911</updated>
       <workItem from="1519933907275" duration="640000" />
-      <workItem from="1519949179677" duration="14002000" />
+      <workItem from="1519949179677" duration="14794000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14642000" />
+    <option name="totallyTimeSpent" value="15434000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="947" y="116" width="1152" height="1051" extended-state="0" />
+    <frame x="845" y="119" width="1152" height="1051" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24933687" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -706,13 +703,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ForumThreadList.js">
+    <entry file="file://$PROJECT_DIR$/src/selectors/getThreadPosts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="11" column="59" lean-forward="false" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -724,11 +719,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/selectors/getThreadPosts.js">
+    <entry file="file://$PROJECT_DIR$/src/components/ForumThreadList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-          <folding />
+        <state relative-caret-position="269">
+          <caret line="19" column="48" lean-forward="false" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
