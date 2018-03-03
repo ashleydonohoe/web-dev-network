@@ -5,6 +5,7 @@ import DashboardPage from '../components/DashboardPage';
 import ForumPostList from '../components/ForumPostList';
 import NotFoundPage from '../components/NotFoundPage';
 import LoginPage from '../components/LoginPage';
+import ForumThreadList from '../components/ForumThreadList';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
@@ -16,7 +17,8 @@ const AppRouter = () => (
       <Switch>
           <PublicRoute path="/" component={LoginPage} exact />
           <PrivateRoute exact path="/forums" component={DashboardPage} />
-          <PrivateRoute path="/forums/:id" component={ForumPostList}/>
+          <PrivateRoute path="/forums/:id" component={ForumPostList} exact/>
+          <PrivateRoute path="/forums/:forumId/:postId" component={ForumThreadList} exact/>
         <Route component={NotFoundPage} />
       </Switch>
     </div>

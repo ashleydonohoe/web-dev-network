@@ -6,8 +6,10 @@ import getForumThreads from '../selectors/getForumThreads';
 
 export class ForumPostList extends React.Component {
     render() {
+        const forumURL = this.props.location.pathname;
         const filteredForum = filterForums(this.props.posts, this.props.match.params.id)[0]
         const forumName = filteredForum.name;
+        console.log(forumName);
         const posts = getForumThreads(filteredForum.posts);
         console.log(posts);
 
@@ -21,7 +23,7 @@ export class ForumPostList extends React.Component {
                     <div>No Posts Found!</div>
                 ) : (
                 posts.map((post) => {
-                return <ForumPostItem key={post.id} {...post} />
+                return <ForumPostItem key={post.id} currentPath={forumURL} {...post} />
                 })
             )}
             </div>
