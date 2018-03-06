@@ -19,6 +19,7 @@ export default class AddPostForm extends React.Component {
             title: '',
             date: moment(),
             user: this.props.user,
+            forumId: this.props.forumId,
             error: ''
         };
     }
@@ -41,13 +42,15 @@ export default class AddPostForm extends React.Component {
 
         } else {
             this.setState(() => ({error: ''}));
-            console.log('submit');
-            this.props.onSubmit({
+            const postData = {
                 title: this.state.title,
                 date: this.state.date,
                 content: this.state.content,
-                user: this.state.user
-            });
+                user: this.state.user,
+                forumId: this.state.forumId
+            };
+
+            this.props.onSubmit(postData);
         }
     };
 

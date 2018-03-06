@@ -44,3 +44,6 @@ firebase.auth().onAuthStateChanged((user) => {
     history.push('/');
   }
 });
+
+
+// Data restructure idea. Separate posts themselves into new state with forumId saved; get the posts using the getChild
