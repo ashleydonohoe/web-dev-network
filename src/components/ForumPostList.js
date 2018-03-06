@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ForumPostItem from './ForumPostItem';
 import filterForums from '../selectors/filterForums';
@@ -15,6 +16,7 @@ export class ForumPostList extends React.Component {
 
         return (
         <div className="content-container">
+            <Link className="button button-add-post" to={`${forumURL}/new`}>Add Post</Link>
             <h1>Posts for {forumName}</h1>
             <div className="list-header">Posts</div>
 

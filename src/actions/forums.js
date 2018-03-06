@@ -25,7 +25,15 @@ export const startGetForums = () => {
 };
 
 export const startAddPost = (postData = {}) => {
-    return (dispatch, getState) => {
+    return (dispatch) => {
+        const {
+            content = '',
+            title = '',
+            date = 0,
+            user = { uid: 'null', name: 'Unknown'}
+        } = postData;
+
+        const post = {content, title, date, user};
 
     }
 };

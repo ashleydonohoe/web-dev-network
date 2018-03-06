@@ -18,11 +18,12 @@ export default class AddPostForm extends React.Component {
             content: '',
             title: '',
             date: moment(),
+            user: this.props.user,
             error: ''
         };
     }
 
-    ontitleChange = (e) => {
+    onTitleChange = (e) => {
         const title = e.target.value;
         this.setState(() => ({title}));
     };
@@ -44,7 +45,8 @@ export default class AddPostForm extends React.Component {
             this.props.onSubmit({
                 title: this.state.title,
                 date: this.state.date,
-                content: this.state.content
+                content: this.state.content,
+                user: this.state.user
             });
         }
     };
@@ -53,8 +55,8 @@ export default class AddPostForm extends React.Component {
         return (
             <form className="form" onSubmit={this.onSubmit}>
                 { this.state.error && <p className="form__error">{this.state.error}</p>}
-                <input className="text-input" type="text" placeholder="Title" autoFocus value={this.state.title} onChange={this.ontitleChange} />
-                <textarea className="textarea" placeholder="Add post content here" onChange={this.onContentChange()} value={this.state.content}></textarea>
+                <input className="text-input" type="text" placeholder="Title" autoFocus value={this.state.title} onChange={this.onTitleChange} />
+                <textarea className="textarea" placeholder="Add post content here" onChange={this.onContentChange} value={this.state.content}></textarea>
                 <div>
                     <button className="button">Add Post</button>
                 </div>
