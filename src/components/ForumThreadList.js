@@ -1,14 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ForumPostItem from './ForumPostItem';
-import filterForums from '../selectors/filterForums';
-import getForumThreads from '../selectors/getForumThreads';
+import getReplies from '../selectors/getReplies';
 import getThreadPosts from '../selectors/getThreadPosts';
 
 export class ForumThreadList extends React.Component {
 
     render() {
         const post = this.props.post;
+        let replies;
+
+        if(!post) {
+            console.log("no post")
+        } else {
+          replies = getReplies(post.replies);
+          console.log(replies);
+        }
 
         return (
             <div className="content-container">
@@ -17,29 +24,25 @@ export class ForumThreadList extends React.Component {
                 </div>
 
                 <div className="list-body">
+                    {/* Show first post if available*/}
                     { post === undefined ? (
                         <div>No Post Found!</div>
                     ) : (
                         // return first post
                         <ForumPostItem key={post.id} {...post}/>
-                    )
+                        )
+                    }
+
+                    {/* Show replies if they exist */}
+                    { replies !== undefined && replies.length > 0 ? (
+                        replies.map((reply) => {
+                            return <ForumPostItem key={reply.id} {...reply} />
+                        })
+                        ) : (
+                        <p>No Replies Available</p>
+                        )
                     }
                 </div>
-
-                {/*<div className="list-body">*/}
-                {/*<ForumPostItem key={post.id} {...post}/>*/}
-                {/*{ replies.length === 0 ? (*/}
-                {/*<div>No replies yet!</div>*/}
-                {/*) : (*/}
-                {/*replies.map((reply) => {*/}
-                {/*return <ForumPostItem key={reply.id} {...reply} />*/}
-                {/*})*/}
-                {/*)}*/}
-                {/*</div>*/}
-                {/*) :*/}
-                {/*<p>No post found</p>*/}
-                {/*}*/}
-
             </div>
         )
 

@@ -21,6 +21,7 @@ export class ForumPostList extends React.Component {
                     <div>No Posts Found!</div>
                 ) : (
                 posts.map((post) => {
+                    console.log(post.id);
                 return <ForumPostItem key={post.id} currentPath={forumURL} {...post} />
                 })
             )}
