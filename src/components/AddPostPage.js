@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import AddPostForm from './AddPostForm';
-import { startAddPost} from '../actions/forums';
+import { startAddPost} from '../actions/posts';
 
 export class AddPostPage extends React.Component {
     onSubmit = (post) => {

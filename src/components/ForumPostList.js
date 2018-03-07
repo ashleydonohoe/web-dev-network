@@ -1,23 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import ForumPostItem from './ForumPostItem';
-import filterForums from '../selectors/filterForums';
 import getForumThreads from '../selectors/getForumThreads';
 
 export class ForumPostList extends React.Component {
     render() {
         const forumURL = this.props.location.pathname;
-        const filteredForum = filterForums(this.props.posts, this.props.match.params.id)[0];
-        const forumName = filteredForum.name;
-        console.log(forumName);
-        const posts = getForumThreads(filteredForum.posts);
+        const posts = getForumThreads(this.props.posts, this.props.match.params.id);
         console.log(posts);
 
         return (
         <div className="content-container">
             <Link className="button button-add-post" to={`${forumURL}/new`}>Add Post</Link>
-            <h1>Posts for {forumName}</h1>
+            <h1>Posts for {forumURL}</h1>
             <div className="list-header">Posts</div>
 
             <div className="list-body">
@@ -36,7 +32,7 @@ export class ForumPostList extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        posts: state.forums
+        posts: state.posts
     }
 };
 

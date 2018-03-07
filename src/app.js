@@ -9,6 +9,7 @@ import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 import { firebase } from './firebase/firebase';
 import {startGetForums} from './actions/forums';
+import { startGetPosts } from './actions/posts';
 import LoadingPage from './components/LoadingPage';
 
 const store = configureStore();
@@ -33,17 +34,15 @@ firebase.auth().onAuthStateChanged((user) => {
       const name = user.displayName;
       store.dispatch(login(uid, name));
         store.dispatch(startGetForums()).then(() => {
-            renderApp();
-            if (history.location.pathname === '/') {
-                history.push('/forums');
-            }
-        });
+            store.dispatch(startGetPosts());
+                renderApp();
+                if (history.location.pathname === '/') {
+                    history.push('/forums');
+                }
+            });
   } else {
     store.dispatch(logout());
     renderApp();
     history.push('/');
   }
 });
-
-
-// Data restructure idea. Separate posts themselves into new state with forumId saved; get the posts using the getChild

@@ -44,7 +44,7 @@ export default class AddPostForm extends React.Component {
             this.setState(() => ({error: ''}));
             const postData = {
                 title: this.state.title,
-                date: this.state.date,
+                date: this.state.date.valueOf(),
                 content: this.state.content,
                 user: this.state.user,
                 forumId: this.state.forumId
