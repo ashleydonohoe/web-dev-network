@@ -18,14 +18,14 @@ export const startGetPosts = () => {
                 });
 
             });
+            console.log(posts);
             dispatch(getPosts(posts));
         });
     };
 };
 
-export const addPost = (post) => ({
-    type: 'ADD_POST',
-    post
+export const addPost = () => ({
+    type: 'ADD_POST'
 });
 
 export const startAddPost = (postData = {}) => {
@@ -42,10 +42,11 @@ export const startAddPost = (postData = {}) => {
         const post = {content, title, date, user, forumId};
 
         return database.ref(`posts`).push(post).then((ref) => {
-            dispatch(addPost({
-                id: ref.key,
-                ...post
-            }));
+            // dispatch(addPost({
+            //     id: ref.key,
+            //     ...post
+            // }));
+            dispatch(addPost());
         });
     }
 };
