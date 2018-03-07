@@ -9,11 +9,9 @@ export const getForums = (forums) => ({
 export const startGetForums = () => {
     return (dispatch) => {
         return database.ref('forums').once('value').then((snapshot) => {
-            console.log(snapshot);
             // Set forum list empty
            let forumList = [];
            snapshot.forEach((childSnapshot) => {
-              console.log(childSnapshot.val());
               forumList.push({
                   id: childSnapshot.key,
                   ...childSnapshot.val()

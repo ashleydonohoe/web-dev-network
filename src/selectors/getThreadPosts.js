@@ -1,5 +1,5 @@
-export default (thread, postId) => {
-    return thread.filter((thread) => {
-        return thread.id === postId
+export default (posts, postId) => {
+    return posts.filter((post) => {
+        return post.id === postId
     });
 };

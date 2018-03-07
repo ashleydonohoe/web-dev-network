@@ -12,7 +12,6 @@ export const startGetPosts = () => {
             // Set forum list empty
             let posts = [];
             snapshot.forEach((childSnapshot) => {
-                console.log(childSnapshot.val());
                 posts.push({
                     id: childSnapshot.key,
                     ...childSnapshot.val()
@@ -30,7 +29,6 @@ export const addPost = (post) => ({
 });
 
 export const startAddPost = (postData = {}) => {
-    console.log(postData);
     return (dispatch) => {
         const {
             content = '',
