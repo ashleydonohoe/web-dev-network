@@ -20,6 +20,7 @@ export default class AddPostForm extends React.Component {
             date: moment(),
             user: this.props.user,
             forumId: this.props.forumId,
+            postId: this.props.postId,
             error: ''
         };
     }
@@ -47,7 +48,8 @@ export default class AddPostForm extends React.Component {
                 date: this.state.date.valueOf(),
                 content: this.state.content,
                 user: this.state.user,
-                forumId: this.state.forumId
+                forumId: this.state.forumId,
+                postId: this.state.postId
             };
 
             this.props.onSubmit(postData);
@@ -55,6 +57,7 @@ export default class AddPostForm extends React.Component {
     };
 
     render() {
+        console.log(this.state.postId);
         return (
             <form className="form" onSubmit={this.onSubmit}>
                 { this.state.error && <p className="form__error">{this.state.error}</p>}

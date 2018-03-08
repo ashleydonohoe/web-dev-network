@@ -20,6 +20,7 @@ const AppRouter = () => (
           <PrivateRoute exact path="/forums" component={DashboardPage} />
           <PrivateRoute path="/forums/:id" component={ForumPostList} exact/>
           <PrivateRoute path="/forums/:forumId/new" component={AddPostPage} exact />
+          <PrivateRoute path="/forums/:forumId/:postId/new" component={AddPostPage} exact />
           <PrivateRoute path="/forums/:forumId/:postId" component={ForumThreadList} exact/>
         <Route component={NotFoundPage} />
       </Switch>

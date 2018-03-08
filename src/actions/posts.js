@@ -18,7 +18,6 @@ export const startGetPosts = () => {
                 });
 
             });
-            console.log(posts);
             dispatch(getPosts(posts));
         });
     };
@@ -35,18 +34,21 @@ export const startAddPost = (postData = {}) => {
             title = '',
             date = 0,
             user = { uid: 'null', name: 'Unknown'},
-            forumId = ''
+            forumId = '',
         } = postData;
 
 
         const post = {content, title, date, user, forumId};
+        const existingPost = postData.postId;
 
-        return database.ref(`posts`).push(post).then((ref) => {
-            // dispatch(addPost({
-            //     id: ref.key,
-            //     ...post
-            // }));
+        const url = (existingPost !== '' ? `posts/${existingPost}/replies` : 'posts');
+
+        return database.ref(url).push(post).then((ref) => {
             dispatch(addPost());
         });
     }
 };
+
+// Delete whole thread (must be thread owner)
+
+// Delete individual post (must be post owner)

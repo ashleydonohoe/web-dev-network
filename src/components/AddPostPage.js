@@ -11,6 +11,8 @@ export class AddPostPage extends React.Component {
 
     render() {
         const forumId = this.props.match.params.forumId;
+        const postId = this.props.match.params.postId ? this.props.match.params.postId : '';
+
         return (
             <div>
                 <div className="page-header">
@@ -19,7 +21,7 @@ export class AddPostPage extends React.Component {
                     </div>
                 </div>
                 <div className="content-container">
-                    <AddPostForm user={this.props.user} forumId={forumId} onSubmit={this.onSubmit}/>
+                    <AddPostForm user={this.props.user} postId={postId} forumId={forumId} onSubmit={this.onSubmit}/>
                 </div>
             </div>
         );

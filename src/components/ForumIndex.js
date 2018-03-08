@@ -7,7 +7,6 @@ const ForumIndex = ({forums}) => (
         <h1>Forums</h1>
         {/* Create row for each forum category created */}
         <div className="list-header">Categories</div>
-        {console.log(forums)}
 
         <div className="list-body">
             { forums.length === 0 ? (

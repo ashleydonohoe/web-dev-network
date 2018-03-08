@@ -8,7 +8,6 @@ export class ForumPostList extends React.Component {
     render() {
         const forumURL = this.props.location.pathname;
         const posts = getForumThreads(this.props.posts, this.props.match.params.id);
-        console.log(posts);
 
         return (
         <div className="content-container">
@@ -21,7 +20,6 @@ export class ForumPostList extends React.Component {
                     <div>No Posts Found!</div>
                 ) : (
                 posts.map((post) => {
-                    console.log(post.id);
                 return <ForumPostItem key={post.id} currentPath={forumURL} {...post} />
                 })
             )}
