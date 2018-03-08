@@ -50,5 +50,14 @@ export const startAddPost = (postData = {}) => {
 };
 
 // Delete whole thread (must be thread owner)
+export const removePost = () => ({
+   type: 'REMOVE_POST'
+});
 
-// Delete individual post (must be post owner)
+export const startRemovePost = (id) => {
+  return (dispatch) => {
+      return database.ref(`posts/${id}`).remove().then(() => {
+         dispatch(removePost());
+      });
+  }
+};

@@ -6,6 +6,8 @@ export default(state = postsDefaultState, action) => {
             return state;
         case 'GET_POSTS':
             return action.posts;
+        case 'REMOVE_POST':
+            return state;
         default:
             return state;
     }

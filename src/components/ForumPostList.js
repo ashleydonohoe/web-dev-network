@@ -7,7 +7,7 @@ import getForumThreads from '../selectors/getForumThreads';
 export class ForumPostList extends React.Component {
     render() {
         const forumURL = this.props.location.pathname;
-        const posts = getForumThreads(this.props.posts, this.props.match.params.id);
+        const posts = this.props.posts;
 
         return (
         <div className="content-container">
@@ -29,9 +29,9 @@ export class ForumPostList extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
     return {
-        posts: state.posts
+        posts: getForumThreads(state.posts, ownProps.match.params.id)
     }
 };
 
