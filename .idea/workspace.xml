@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="307c731d-d633-4da8-8c3d-413f5fcea647" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/posts.js" afterPath="$PROJECT_DIR$/src/actions/posts.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/AddPostForm.js" afterPath="$PROJECT_DIR$/src/components/AddPostForm.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/AddPostPage.js" afterPath="$PROJECT_DIR$/src/components/AddPostPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ForumIndex.js" afterPath="$PROJECT_DIR$/src/components/ForumIndex.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ForumPostItem.js" afterPath="$PROJECT_DIR$/src/components/ForumPostItem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ForumPostList.js" afterPath="$PROJECT_DIR$/src/components/ForumPostList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ForumThreadList.js" afterPath="$PROJECT_DIR$/src/components/ForumThreadList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routers/AppRouter.js" afterPath="$PROJECT_DIR$/src/routers/AppRouter.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/components/_button.scss" afterPath="$PROJECT_DIR$/src/styles/components/_button.scss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,7 +18,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ForumThreadList.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ForumThreadList.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/ForumThreadList.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="538">
@@ -64,7 +56,7 @@
       <file leaf-file-name="posts.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/actions/posts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13">
+            <state relative-caret-position="285">
               <caret line="19" column="15" lean-forward="false" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
               <folding />
             </state>
@@ -74,8 +66,8 @@
       <file leaf-file-name="AddPostPage.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/AddPostPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="283">
+              <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -83,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddPostForm.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AddPostForm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/AddPostForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+            <state relative-caret-position="342">
+              <caret line="58" column="14" lean-forward="false" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -161,12 +153,12 @@
         <option value="$PROJECT_DIR$/src/components/ForumPostItem.js" />
         <option value="$PROJECT_DIR$/src/styles/components/_button.scss" />
         <option value="$PROJECT_DIR$/src/routers/AppRouter.js" />
-        <option value="$PROJECT_DIR$/src/components/AddPostPage.js" />
-        <option value="$PROJECT_DIR$/src/components/AddPostForm.js" />
         <option value="$PROJECT_DIR$/src/actions/posts.js" />
         <option value="$PROJECT_DIR$/src/components/ForumThreadList.js" />
         <option value="$PROJECT_DIR$/src/components/ForumPostList.js" />
         <option value="$PROJECT_DIR$/src/components/ForumIndex.js" />
+        <option value="$PROJECT_DIR$/src/components/AddPostPage.js" />
+        <option value="$PROJECT_DIR$/src/components/AddPostForm.js" />
       </list>
     </option>
   </component>
@@ -182,8 +174,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="231" />
-    <option name="y" value="83" />
+    <option name="x" value="736" />
+    <option name="y" value="127" />
     <option name="width" value="1485" />
     <option name="height" value="1051" />
   </component>
@@ -486,12 +478,12 @@
       <option name="presentableId" value="Default" />
       <updated>1519933905911</updated>
       <workItem from="1519933907275" duration="640000" />
-      <workItem from="1519949179677" duration="32826000" />
+      <workItem from="1519949179677" duration="33311000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33466000" />
+    <option name="totallyTimeSpent" value="33951000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -503,7 +495,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="231" y="83" width="1485" height="1051" extended-state="0" />
+    <frame x="736" y="127" width="1485" height="1051" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19262294" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -808,36 +800,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AddPostForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routers/AppRouter.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="24" column="42" lean-forward="true" selection-start-line="24" selection-start-column="42" selection-end-line="24" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AddPostPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/posts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="19" column="15" lean-forward="false" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
           <folding />
         </state>
       </provider>
@@ -878,6 +844,32 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/posts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="15" lean-forward="false" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AddPostPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AddPostForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="58" column="14" lean-forward="false" selection-start-line="58" selection-start-column="14" selection-end-line="58" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>

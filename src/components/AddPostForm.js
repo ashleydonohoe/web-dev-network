@@ -57,7 +57,6 @@ export default class AddPostForm extends React.Component {
     };
 
     render() {
-        console.log(this.state.postId);
         return (
             <form className="form" onSubmit={this.onSubmit}>
                 { this.state.error && <p className="form__error">{this.state.error}</p>}
