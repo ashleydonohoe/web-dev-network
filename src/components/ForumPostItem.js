@@ -9,7 +9,7 @@ export const ForumPostItem = ({user, content, title, id, date, currentPath, isTh
                <div>
                    { isPoster ? <button className="button button-delete" onClick={onDelete}>Delete</button> : ""}
                    <h3 className="list-item__title">{title}</h3>
-                   <p className="list-item__sub-title">Posted at {moment(date).format('MMMM Do, YYYY')} by {user.name ? user.name : "Unknown"}</p>
+                   <p className="list-item__sub-title">Posted at {moment(date).format('MMMM Do, YYYY')} by {user.name ? <Link to={`/users/${user.uid}`}> {user.name}</Link> : "Unknown"}</p>
                    <p><strong>Post Body:</strong> <br/> {content}</p>
                </div>
            </div>

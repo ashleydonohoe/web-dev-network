@@ -26,15 +26,14 @@ export class ForumThreadList extends React.Component {
             replies = getReplies(post.replies);
         }
 
-        console.log(this.props.user);
 
+        const forumCategory = this.props.match.params.forumId;
         const isPoster = (userId === this.props.user.uid);
-        console.log(isPoster);
 
         return (
             <div className="content-container">
                 <Link className="button button-reply-button" to={`${forumURL}/new`}>Add Reply</Link><br/>
-                <h1>Posts for Thread: { post ? post.title : ""}</h1>
+                <h1>{ post ? post.title : ""} on the <Link to={`/forums/${forumCategory}`}>{forumCategory}</Link> forum</h1>
                 <div className="list-header">Posts</div>
                 <div className="list-body">
                     {/* Show first post if available*/}
