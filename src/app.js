@@ -32,7 +32,19 @@ firebase.auth().onAuthStateChanged((user) => {
   if (user) {
       const uid = user.uid;
       const name = user.displayName;
-      store.dispatch(login(uid, name));
+      const photoUrl = user.photoURL;
+      const email = user.email;
+      const isAnon = user.isAnonymous;
+
+      const currentUser = {
+          uid,
+          name,
+          photoUrl,
+          email,
+          isAnon
+      };
+
+      store.dispatch(login(currentUser));
         store.dispatch(startGetForums()).then(() => {
             store.dispatch(startGetPosts());
                 renderApp();

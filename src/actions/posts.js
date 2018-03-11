@@ -23,10 +23,6 @@ export const startGetPosts = () => {
     };
 };
 
-export const addPost = () => ({
-    type: 'ADD_POST'
-});
-
 export const startAddPost = (postData = {}) => {
     return (dispatch) => {
         const {
@@ -44,7 +40,7 @@ export const startAddPost = (postData = {}) => {
         const url = (existingPost !== '' ? `posts/${existingPost}/replies` : 'posts');
 
         return database.ref(url).push(post).then((ref) => {
-            dispatch(addPost());
+            dispatch(startGetPosts());
         });
     }
 };

@@ -6,7 +6,7 @@ import { startAddPost} from '../actions/posts';
 export class AddPostPage extends React.Component {
     onSubmit = (post) => {
         this.props.startAddPost(post);
-        const url = this.props.match.params.postId !== '' ? `/forums/${this.props.match.params.forumId}/${this.props.match.params.postId}` : `/forums/${this.props.match.params.forumId}`;
+        const url = `/forums/${this.props.match.params.forumId}`;
         this.props.history.push(url);
     };
 

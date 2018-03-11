@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ForumPostItem from './ForumPostItem';
 import getReplies from '../selectors/getReplies';
 import getThreadPosts from '../selectors/getThreadPosts';
-import { startRemovePost} from '../actions/posts';
+import { startRemovePost } from '../actions/posts';
 const uuid = require('uuid/v1');
 
 export class ForumThreadList extends React.Component {
