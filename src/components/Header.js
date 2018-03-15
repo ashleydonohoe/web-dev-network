@@ -10,9 +10,10 @@ export const Header = ({ startLogout, user }) => (
           <Link className="header__title" to="/forums">
               <h1>Web Dev Network</h1>
           </Link>
-          <Link className="button button--link" to="/chat">Chat Room</Link>
+          <Link className="button button--link" to="/forums">Forums</Link>
+          <Link className="button button--link" to="/chat">Live Chat</Link>
           <Link className="button button--link" to="/resources">Resources</Link>
-          <Link className="button button--link" to={`/users/${user.uid}`}>User Profile</Link>
+          <Link className="button button--link" to={`/users/${user.uid}`}>Profile</Link>
         <button className="button button--link" onClick={startLogout}>Logout</button>
       </div>
     </div>

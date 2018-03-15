@@ -8,10 +8,16 @@ import { startRemovePost } from '../actions/posts';
 const uuid = require('uuid/v1');
 
 export class ForumThreadList extends React.Component {
-    handleDelete = () => {
-       console.log("Delete thread", this.props.post.id);
-       this.props.startRemovePost(this.props.post.id);
-       this.props.history.push('/');
+    handleDelete = (replyId, isReply) => {
+        const threadId = this.props.post.id;
+        const postInfo = {
+            threadId,
+            replyId,
+            isReply
+        };
+
+        this.props.startRemovePost(postInfo);
+        this.props.history.push('/');
     };
 
     render() {
@@ -25,7 +31,6 @@ export class ForumThreadList extends React.Component {
             userId = post.user.uid;
             replies = getReplies(post.replies);
         }
-
 
         const forumCategory = this.props.match.params.forumId;
         const isPoster = (userId === this.props.user.uid);
@@ -41,14 +46,14 @@ export class ForumThreadList extends React.Component {
                         <div>No Post Found!</div>
                     ) : (
                         // return first post
-                        <ForumPostItem isThread={true } key={post.id} {...post} onDelete={this.handleDelete} isPoster={isPoster}/>
+                        <ForumPostItem isThread={true } key={post.id} isReply={false} {...post} onDelete={this.handleDelete} isPoster={isPoster}/>
                         )
                     }
 
                     {/* Show replies if they exist */}
                     { replies !== undefined && replies.length > 0 ? (
                         replies.map((reply) => {
-                            return <ForumPostItem isThread={true} key={uuid()} {...reply} />
+                            return <ForumPostItem isReply={true} isThread={true} key={uuid()} isPoster={isPoster}{...reply} onDelete={this.handleDelete} />
                         })
                         ) : (
                         <p>No Replies Available</p>

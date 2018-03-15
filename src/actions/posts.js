@@ -1,4 +1,5 @@
 import database from '../firebase/firebase';
+import uuid from 'uuid/v4';
 
 export const getPosts = (posts) => ({
     type: 'GET_POSTS',
@@ -31,15 +32,16 @@ export const startAddPost = (postData = {}) => {
             date = 0,
             user = { uid: 'null', name: 'Unknown'},
             forumId = '',
+            id = uuid()
         } = postData;
 
 
-        const post = {content, title, date, user, forumId};
+        const post = {content, title, date, user, forumId, id};
         const existingPost = postData.postId;
 
-        const url = (existingPost !== '' ? `posts/${existingPost}/replies` : 'posts');
+        const url = (existingPost !== '' ? `posts/${existingPost}/replies/${id}` : `posts/${id}`);
 
-        return database.ref(url).push(post).then((ref) => {
+        return database.ref(url).set(post).then((ref) => {
             dispatch(startGetPosts());
         });
     }
@@ -50,9 +52,11 @@ export const removePost = () => ({
    type: 'REMOVE_POST'
 });
 
-export const startRemovePost = (id) => {
-  return (dispatch) => {
-      return database.ref(`posts/${id}`).remove().then(() => {
+export const startRemovePost = (postInfo = {}) => {
+    const {threadId, replyId, isReply } = postInfo;
+    const url = isReply ? `posts/${threadId}/replies/${replyId}` : `posts/${threadId}`;
+    return (dispatch) => {
+      return database.ref(url).remove().then(() => {
          dispatch(removePost());
       });
   }

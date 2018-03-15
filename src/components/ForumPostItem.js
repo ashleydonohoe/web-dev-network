@@ -2,12 +2,13 @@ import React from 'react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 
-export const ForumPostItem = ({user, content, title, id, date, currentPath, isThread, isPoster, onDelete}) => {
+export const ForumPostItem = ({user, content, title, id, date, currentPath, isThread, isPoster, onDelete, isReply}) => {
    if(isThread) {
+       const replyId = isReply ? id : undefined;
        return (
            <div className="list-item">
                <div>
-                   { isPoster ? <button className="button button-delete" onClick={onDelete}>Delete</button> : ""}
+                   { isPoster ? <button className="button button-delete" onClick={() => onDelete(replyId, isReply)}>Delete</button> : ""}
                    <h3 className="list-item__title">{title}</h3>
                    <p className="list-item__sub-title">Posted at {moment(date).format('MMMM Do, YYYY')} by {user.name ? <Link to={`/users/${user.uid}`}> {user.name}</Link> : "Unknown"}</p>
                    <p><strong>Post Body:</strong> <br/> {content}</p>
