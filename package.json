@@ -27,7 +27,7 @@
     "firebase": "4.2.0",
     "history": "4.7.2",
     "lodash": "^4.17.5",
-    "moment": "2.18.1",
+    "moment": "^2.21.0",
     "node-sass": "4.5.3",
     "normalize.css": "7.0.0",
     "numeral": "2.0.6",
