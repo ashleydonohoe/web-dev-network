@@ -22,13 +22,13 @@ class MessageList extends React.Component {
             <div className="message-list" id="message-list">
                 <ul>
                     {messages.map((message, index) => {
-                        if(message.username !== currentUser) {
+                        if(message.user.uid !== currentUser.uid) {
                             return (
-                                <Linkify key={index} properties={{target: '_blank'}}><li><span className="username">{message.username}</span>: {message.text}</li></Linkify>
+                                <Linkify key={index} properties={{target: '_blank'}}><li><span className="username">{message.user.username}</span>: {message.text}</li></Linkify>
                             )
                         } else {
                             return (
-                                <Linkify key={index} properties={{target: '_blank'}}><li><span className="username active-user">{message.username}</span>: {message.text}</li></Linkify>
+                                <Linkify key={index} properties={{target: '_blank'}}><li><span className="username active-user">{message.user.username}</span>: {message.text}</li></Linkify>
                             )
                         }
                     })}

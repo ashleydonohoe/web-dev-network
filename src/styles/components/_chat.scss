@@ -22,3 +22,56 @@
   border-radius: 5px;
   overflow: scroll;
 }
+
+
+.username {
+  color: #2980b9;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.active-user {
+  color: red;
+}
+
+.message-list ul {
+  list-style: none;
+  padding-left: 5px;
+}
+
+.message-list ul li {
+  margin: 10px;
+}
+
+.chat-input-box {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.chat-input-box input {
+  width: 100%;
+  height: 40px;
+  padding-left: 0;
+  margin-right: 15px;
+  box-shadow: 1px 1px 1px darkgrey;
+  outline: none;
+  font-size: 14px;
+}
+
+.chat-input-box button {
+  background: #364051;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  box-shadow: 1px 1px 1px black;
+  border-radius: 5px;
+  outline: none;
+  color: white;
+}
+
+.chat-input-box button:hover {
+  opacity: 0.8;
+  background: #363951;
+}

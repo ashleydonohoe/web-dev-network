@@ -10,6 +10,7 @@ import 'react-dates/lib/css/_datepicker.css';
 import { firebase } from './firebase/firebase';
 import {startGetForums} from './actions/forums';
 import { startGetPosts } from './actions/posts';
+import { startGetMessages} from './actions/chat';
 import LoadingPage from './components/LoadingPage';
 
 const store = configureStore();
@@ -47,6 +48,7 @@ firebase.auth().onAuthStateChanged((user) => {
       store.dispatch(login(currentUser));
         store.dispatch(startGetForums()).then(() => {
             store.dispatch(startGetPosts());
+            store.dispatch(startGetMessages());
                 renderApp();
                 if (history.location.pathname === '/') {
                     history.push('/forums');
