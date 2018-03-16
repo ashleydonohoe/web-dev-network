@@ -22,3 +22,11 @@ export const startGetMessages = () => {
         });
     };
 };
+
+export const startAddMessage = (message) => {
+    return (dispatch) => {
+        return database.ref('chat').push(message).then((ref) => {
+            console.log('message added');
+        });
+    }
+};

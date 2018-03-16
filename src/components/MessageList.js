@@ -24,11 +24,11 @@ class MessageList extends React.Component {
                     {messages.map((message, index) => {
                         if(message.user.uid !== currentUser.uid) {
                             return (
-                                <Linkify key={index} properties={{target: '_blank'}}><li><span className="username">{message.user.username}</span>: {message.text}</li></Linkify>
+                                <Linkify key={index} properties={{target: '_blank'}}><li><span className="username">{message.user.name}</span>: {message.text}</li></Linkify>
                             )
                         } else {
                             return (
-                                <Linkify key={index} properties={{target: '_blank'}}><li><span className="username active-user">{message.user.username}</span>: {message.text}</li></Linkify>
+                                <Linkify key={index} properties={{target: '_blank'}}><li><span className="username active-user">{message.user.name}</span>: {message.text}</li></Linkify>
                             )
                         }
                     })}

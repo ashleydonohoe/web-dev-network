@@ -11,7 +11,7 @@ class ChatInput extends Component {
         if(this.state.text !== '') {
             const message = {
                 text: this.state.text,
-                date: moment(),
+                date: moment().valueOf(),
                 user: this.props.user
             };
 
