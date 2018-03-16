@@ -1,0 +1,24 @@
+.top-bar {
+  height: 30px;
+  background: #364051;
+  margin: auto;
+  box-shadow: 1px 1px 1px 1px black;
+  border: 1px solid white;
+  border-radius: 5px;
+
+  span {
+    margin-left: 10px;
+    color: white;
+  }
+}
+
+.container {
+  height: 400px;
+  margin: 0 auto;
+  background: white;
+  display: flex;
+  box-shadow: 1px 1px 1px 1px #364051;
+  border: 1px solid #364051;
+  border-radius: 5px;
+  overflow: scroll;
+}

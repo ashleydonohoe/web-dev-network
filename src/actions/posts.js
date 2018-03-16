@@ -61,3 +61,21 @@ export const startRemovePost = (postInfo = {}) => {
       });
   }
 };
+
+// export const editPost = () = ({
+//    type: 'EDIT_POST'
+// });
+//
+// export const startEditPost = (postData) => {
+//     return (dispatch) => {
+//
+//         // const post = {content, title, date, user, forumId, id};
+//         // const existingPost = postData.postId;
+//
+//         // const url = (existingPost !== '' ? `posts/${existingPost}/replies/${id}` : `posts/${id}`);
+//         //
+//         // return database.ref(url).set(post).then((ref) => {
+//         //     dispatch(startGetPosts());
+//         // });
+//     }
+// };

@@ -9,6 +9,7 @@ import AddPostPage from '../components/AddPostPage';
 import ForumThreadList from '../components/ForumThreadList';
 import UserProfilePage from '../components/UserProfilePage';
 import CodingResourcesPage from '../components/CodingResourcesPage';
+import ChatRoomPage from '../components/ChatRoomPage';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 
@@ -24,6 +25,7 @@ const AppRouter = () => (
           <PrivateRoute path="/forums/:forumId/new" component={AddPostPage} exact />
           <PrivateRoute path="/forums/:forumId/:postId/new" component={AddPostPage} exact />
           <PrivateRoute path="/forums/:forumId/:postId" component={ForumThreadList} exact/>
+          <PrivateRoute path="/chat" component={ChatRoomPage} exact />
           <PrivateRoute path="/resources" component={CodingResourcesPage} exact/>
           <PrivateRoute path="/users/:userId" component={UserProfilePage} exact/>
         <Route component={NotFoundPage} />
