@@ -66,3 +66,19 @@ export const startRemovePost = (postInfo = {}) => {
       });
   }
 };
+
+// Like post
+export const likePost = () => ({
+   type: 'LIKE_POST'
+});
+
+export const startLikePost = (postInfo) => {
+    console.log(postInfo);
+    const {threadId, replyId, isReply, numberOfLikes } = postInfo;
+    const url = isReply ? `posts/${threadId}/replies/${replyId}/likes` : `posts/${threadId}/likes`;
+    return (dispatch) => {
+      return database.ref(url).set(numberOfLikes).then((ref) => {
+         dispatch(likePost());
+      });
+    };
+};

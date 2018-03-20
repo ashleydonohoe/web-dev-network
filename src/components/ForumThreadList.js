@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ForumPostItem from './ForumPostItem';
 import getReplies from '../selectors/getReplies';
 import getThreadPosts from '../selectors/getThreadPosts';
-import { startRemovePost } from '../actions/posts';
+import { startRemovePost, startLikePost } from '../actions/posts';
 const uuid = require('uuid/v1');
 
 export class ForumThreadList extends React.Component {
@@ -18,6 +18,21 @@ export class ForumThreadList extends React.Component {
 
         this.props.startRemovePost(postInfo);
         this.props.history.push('/');
+    };
+
+    handleLikePost = (replyId, isReply, currentLikes) => {
+        const threadId = this.props.post.id;
+        const numberOfLikes =  currentLikes + 1;
+        const postInfo = {
+            threadId,
+            replyId,
+            isReply,
+            numberOfLikes
+        };
+
+        console.log(postInfo);
+        this.props.startLikePost(postInfo);
+
     };
 
     render() {
@@ -46,14 +61,14 @@ export class ForumThreadList extends React.Component {
                         <div>No Post Found!</div>
                     ) : (
                         // return first post
-                        <ForumPostItem isThread={true } key={post.id} isReply={false} {...post} onDelete={this.handleDelete} isPoster={isPoster}/>
+                        <ForumPostItem onLike={this.handleLikePost} isThread={true } key={post.id} isReply={false} {...post} onDelete={this.handleDelete} isPoster={isPoster}/>
                         )
                     }
 
                     {/* Show replies if they exist */}
                     { replies !== undefined && replies.length > 0 ? (
                         replies.map((reply) => {
-                            return <ForumPostItem isReply={true} isThread={true} key={uuid()} isPoster={isPoster}{...reply} onDelete={this.handleDelete} />
+                            return <ForumPostItem onLike={this.handleLikePost} isReply={true} isThread={true} key={uuid()} isPoster={isPoster}{...reply} onDelete={this.handleDelete} />
                         })
                         ) : (
                         <p>No Replies Available</p>
@@ -69,7 +84,8 @@ export class ForumThreadList extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        startRemovePost: (id) => dispatch(startRemovePost(id))
+        startRemovePost: (id) => dispatch(startRemovePost(id)),
+        startLikePost: (postInfo) => dispatch(startLikePost(postInfo))
     }
 };
 
