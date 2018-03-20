@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 
-export const ForumPostItem = ({user, content, title, id, date, currentPath, isThread, isPoster, onDelete, isReply}) => {
+export const ForumPostItem = ({user, content, title, id, date, currentPath, isThread, isPoster, onDelete, isReply, likes}) => {
    if(isThread) {
        const replyId = isReply ? id : undefined;
        return (
@@ -12,6 +12,7 @@ export const ForumPostItem = ({user, content, title, id, date, currentPath, isTh
                    <h3 className="list-item__title">{title}</h3>
                    <p className="list-item__sub-title">Posted at {moment(date).format('MMMM Do, YYYY')} by {user.name ? <Link to={`/users/${user.uid}`}> {user.name}</Link> : "Unknown"}</p>
                    <p><strong>Post Body:</strong> <br/> {content}</p>
+                   <p className="likes-count">{likes} likes</p>
                </div>
            </div>
        )
@@ -21,6 +22,7 @@ export const ForumPostItem = ({user, content, title, id, date, currentPath, isTh
                <div>
                    <h3 className="list-item__title">{title}</h3>
                    <p className="list-item__sub-title">Posted at {moment(date).format('MMMM Do, YYYY')} by {user.name ? user.name : "Unknown"}</p>
+                   <p className="likes-count"> {likes} likes</p>
                </div>
            </Link>
        )

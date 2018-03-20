@@ -27,9 +27,6 @@
     background: $off-white;
   }
   @media (min-width: $desktop-breakpoint) {
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
     padding: $m-size;
   }
 }
@@ -60,4 +57,9 @@
     margin: 0;
     padding-left: $s-size;
   }
+}
+
+.likes-count {
+  display: flex;
+  justify-content: flex-end;
 }

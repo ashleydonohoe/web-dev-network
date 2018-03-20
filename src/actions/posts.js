@@ -36,11 +36,12 @@ export const startAddPost = (postData = {}) => {
             date = 0,
             user = { uid: 'null', name: 'Unknown'},
             forumId = '',
-            id = uuid()
+            id = uuid(),
+            likes = 0
         } = postData;
 
 
-        const post = {content, title, date, user, forumId, id};
+        const post = {content, title, date, user, forumId, id, likes};
         const existingPost = postData.postId;
 
         const url = (existingPost !== '' ? `posts/${existingPost}/replies/${id}` : `posts/${id}`);
