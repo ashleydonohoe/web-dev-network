@@ -2,14 +2,15 @@ import React from 'react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 
-export const ForumPostItem = ({user, content, title, id, date, currentPath, isThread, isPoster, onDelete, isReply, likes, onLike}) => {
-    console.log(currentPath);
+export const ForumPostItem = ({user, content, title, id, date, currentPath, isThread, isPoster, onDelete, isReply, likes, likers, onLike}) => {
+    console.log(likers);
    if(isThread) {
        const replyId = isReply ? id : undefined;
-       console.log(currentPath);
-       // const postPath = `${match.params.forumId}/${id}`;
-       // console.log(currentPath);
-       // const url = isReply ? `` : postPath;
+
+       // TODO: Convert the likers list to a format that can be used
+        const people = likers ? Object.keys(likers) : [];
+        const hasLiked = people.includes(user.uid);
+
        return (
            <div className="list-item">
                <div>
@@ -18,7 +19,7 @@ export const ForumPostItem = ({user, content, title, id, date, currentPath, isTh
                    <h3 className="list-item__title">{title}</h3>
                    <p className="list-item__sub-title">Posted at {moment(date).format('MMMM Do, YYYY')} by {user.name ? <Link to={`/users/${user.uid}`}> {user.name}</Link> : "Unknown"}</p>
                    <p><strong>Post Body:</strong> <br/> {content}</p>
-                   <p className="likes-count"><span onClick={() => onLike(replyId, isReply, likes)} className="fa fa-lg fa-heart"></span></p>
+                   { !hasLiked ? <p className="likes-count"><span onClick={() => onLike(replyId, isReply, likes)} className="fa fa-lg fa-heart"></span></p> : ''}
                    <p className="likes-count">{likes} likes</p>
                </div>
            </div>

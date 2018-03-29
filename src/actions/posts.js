@@ -1,5 +1,6 @@
 import database from '../firebase/firebase';
 import uuid from 'uuid/v4';
+import firebase from 'firebase';
 
 export const getPosts = (posts) => ({
     type: 'GET_POSTS',
@@ -73,12 +74,17 @@ export const likePost = () => ({
 });
 
 export const startLikePost = (postInfo) => {
-    console.log(postInfo);
+    const currentUser = firebase.auth().currentUser.uid;
+    console.log(currentUser);
     const {threadId, replyId, isReply, numberOfLikes } = postInfo;
-    const url = isReply ? `posts/${threadId}/replies/${replyId}/likes` : `posts/${threadId}/likes`;
+    const likeUrl = isReply ? `posts/${threadId}/replies/${replyId}/likes` : `posts/${threadId}/likes`;
+    const likersUrl = isReply ? `posts/${threadId}/replies/${replyId}/likers/${currentUser}` : `posts/${threadId}/likers/${currentUser}`;
+
     return (dispatch) => {
-      return database.ref(url).set(numberOfLikes).then((ref) => {
-         dispatch(likePost());
+      return database.ref(likeUrl).set(numberOfLikes).then((ref) => {
+        return database.ref(likersUrl).set(true).then((ref) => {
+            dispatch(likePost());
+        });
       });
     };
 };
